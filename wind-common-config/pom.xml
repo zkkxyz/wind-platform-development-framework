@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.21.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.wind.common</groupId>
+		<artifactId>wind-common-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.wind.common</groupId>
+
+
 	<artifactId>wind-common-config</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${wind-common-config.version}</version>
 	<name>wind-common-config</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -32,12 +32,22 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+		<finalName>zoe-common-config</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>${project.build.directory}/classes</targetPath>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>deployEnv/${env}</directory>
+				<targetPath>${project.build.directory}/classes</targetPath>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 </project>
