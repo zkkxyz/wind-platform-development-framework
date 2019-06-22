@@ -3,14 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.21.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.wind.common</groupId>
+		<artifactId>wind-common-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.wind.common</groupId>
+
 	<artifactId>wind-common-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1,0-SNAPSHOT</version>
 	<name>wind-common-web</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -19,16 +18,57 @@
 	</properties>
 
 	<dependencies>
+		<!-- 公共模块 start -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>com.wind.common</groupId>
+			<artifactId>wind-common-config</artifactId>
+			<version>${wind-common-config.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>com.wind.common</groupId>
+			<artifactId>wind-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
+		<!-- 公共模块 end -->
+
+		<!-- 提供servlet编译 -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- SpringMVC 	start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc-portlet</artifactId>
+		</dependency>
+		<!-- SpringMVC 	end -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
